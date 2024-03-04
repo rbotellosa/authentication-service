@@ -15,4 +15,7 @@ router.post('/logout', authController.logout);
 // Route for password reset
 router.post('/reset-password', authController.resetPassword);
 
+// Route for token authenticatino
+router.post('/auth', authController.authenticate);
+
 export default router;
