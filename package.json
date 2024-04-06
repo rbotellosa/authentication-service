@@ -13,7 +13,7 @@
     "migrate-rollback": "ts-node $(which knex) migrate:rollback --knexfile knexfile.ts",
     "start-api": "rm -rf dist && tsc && node dist/src/app.js"
   },
-  "author": "",
+  "author": "Rodrigo",
   "license": "ISC",
   "dependencies": {
     "@types/knex": "^0.16.1",

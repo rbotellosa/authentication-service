@@ -33,7 +33,13 @@ class AuthController {
       return res.status(401).json({error: 'Invalid username or passwword'})
     }
     const token = await authService.generateJWT(username);
-    return res.status(200).json(token);
+    const refresh_token = await authService.generateRefreshToken(username);
+    return res.status(200).json({
+      message: 'Authentication successful',
+      data: { user: { username } },
+      token,
+      refresh_token: refresh_token
+    });
     } catch (error: any){
       res.status(500).json({error: error.message || 'Internal server error'})
     }
